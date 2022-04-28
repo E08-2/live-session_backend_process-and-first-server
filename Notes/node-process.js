@@ -24,8 +24,18 @@ const sayHello = () => {
 
 // Function 2 - say "hello" to all the people we specify
 const sayHelloToPeople = peopleArray => {
-    for (let person of peopleArray) {
-        console.log(`Hello ${person}!`);
+    // for (let person of peopleArray) {
+    //     console.log(`Hello ${person}!`);
+    // }
+    
+    for (let i = 0; i < peopleArray.length; i++) {
+        if (i === 0) {
+            console.log(`Hello ${peopleArray[i]}!`);
+        } else {
+            // process.exit() immediately quits the current process - no more code will run!
+            console.log("Exiting the current process immediately!")
+            process.exit();
+        }
     }
 }
 
@@ -56,6 +66,8 @@ switch(functionToCall) {
         break;
     case "sayHelloToPeople":
         sayHelloToPeople(allOtherArguments);
+        // This will not run if we exit the process before sayHelloPeople() is finished!
+        console.log("Now all the people have been logged!");
         break;
     default:
         console.log("Unexpected function!");
