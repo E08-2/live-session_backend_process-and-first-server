@@ -27,7 +27,7 @@ const med = arr => {
 // Function to check if all the extra arguments we give can be read as numbers!
 const checkArgsAreNumbers = arr => {
     arr.forEach(val => {
-        if (isNaN(val) === true) {
+        if (isNaN(val)) {
             console.log(`Sorry, the argument ${val} is not a number, please try again`);
             process.exit();
         }
